@@ -1,22 +1,16 @@
-// ===== TICKET STORAGE FUNCTIONS =====
-
-// Get all tickets from localStorage
 export const getTickets = () => {
   const tickets = localStorage.getItem('ticketapp_tickets');
   return tickets ? JSON.parse(tickets) : [];
 };
 
-// Get a single ticket by ID
 export const getTicketById = (id) => {
   const tickets = getTickets();
   return tickets.find(ticket => ticket.id === id);
 };
 
-// Create a new ticket
 export const createTicket = (ticketData) => {
   const tickets = getTickets();
   
-  // Generate a unique ID
   const newTicket = {
     id: 'ticket_' + Date.now(),
     ...ticketData,
@@ -30,7 +24,6 @@ export const createTicket = (ticketData) => {
   return newTicket;
 };
 
-// Update an existing ticket
 export const updateTicket = (id, ticketData) => {
   const tickets = getTickets();
   const index = tickets.findIndex(ticket => ticket.id === id);
@@ -48,7 +41,6 @@ export const updateTicket = (id, ticketData) => {
   return null;
 };
 
-// Delete a ticket
 export const deleteTicket = (id) => {
   const tickets = getTickets();
   const filteredTickets = tickets.filter(ticket => ticket.id !== id);
@@ -56,7 +48,6 @@ export const deleteTicket = (id) => {
   return true;
 };
 
-// Get ticket statistics
 export const getTicketStats = () => {
   const tickets = getTickets();
   
@@ -70,11 +61,9 @@ export const getTicketStats = () => {
   return stats;
 };
 
-// Initialize with sample tickets (for demo purposes)
 export const initializeSampleTickets = () => {
   const existingTickets = getTickets();
   
-  // Only create sample tickets if none exist
   if (existingTickets.length === 0) {
     const sampleTickets = [
       {

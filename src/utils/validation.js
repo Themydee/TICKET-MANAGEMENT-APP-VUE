@@ -1,6 +1,3 @@
-// ===== VALIDATION FUNCTIONS =====
-
-// Validate email format
 export const validateEmail = (email) => {
   if (!email) {
     return 'Email is required';
@@ -14,7 +11,6 @@ export const validateEmail = (email) => {
   return null;
 };
 
-// Validate password
 export const validatePassword = (password) => {
   if (!password) {
     return 'Password is required';
@@ -27,7 +23,6 @@ export const validatePassword = (password) => {
   return null;
 };
 
-// Validate username
 export const validateUsername = (username) => {
   if (!username) {
     return 'Username is required';
@@ -57,7 +52,6 @@ export const validateTicketTitle = (title) => {
   return null;
 };
 
-// Validate ticket description (optional but with constraints)
 export const validateTicketDescription = (description) => {
   if (description && description.length > 500) {
     return 'Description must not exceed 500 characters';
@@ -66,7 +60,7 @@ export const validateTicketDescription = (description) => {
   return null;
 };
 
-// Validate ticket status
+
 export const validateStatus = (status) => {
   const validStatuses = ['open', 'in_progress', 'closed'];
   
@@ -81,10 +75,10 @@ export const validateStatus = (status) => {
   return null;
 };
 
-// Validate ticket priority (optional)
+
 export const validatePriority = (priority) => {
   if (!priority) {
-    return null; // Priority is optional
+    return null; 
   }
   
   const validPriorities = ['low', 'medium', 'high'];
@@ -96,7 +90,7 @@ export const validatePriority = (priority) => {
   return null;
 };
 
-// Validate entire ticket form
+
 export const validateTicketForm = (formData) => {
   const errors = {};
   
@@ -115,7 +109,7 @@ export const validateTicketForm = (formData) => {
   return errors;
 };
 
-// Validate login form
+
 export const validateLoginForm = (formData) => {
   const errors = {};
   
@@ -128,7 +122,7 @@ export const validateLoginForm = (formData) => {
   return errors;
 };
 
-// Validate signup form
+
 export const validateSignupForm = (formData) => {
   const errors = {};
   

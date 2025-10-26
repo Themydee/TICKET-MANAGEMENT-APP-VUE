@@ -79,13 +79,6 @@
         </p>
       </div>
 
-      <!-- Demo credentials info -->
-      <div
-        v-if="isLogin"
-        style="margin-top: 1.5rem; padding: 1rem; background: #f3f4f6; border-radius: 0.5rem; font-size: 0.875rem; color: #6b7280"
-      >
-        <strong>Demo:</strong> Create an account or use test credentials
-      </div>
     </div>
   </div>
 </template>
